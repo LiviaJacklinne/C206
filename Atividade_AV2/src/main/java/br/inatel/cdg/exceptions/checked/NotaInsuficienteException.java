@@ -1,0 +1,9 @@
+package br.inatel.cdg.exceptions.checked;
+
+public class NotaInsuficienteException extends RuntimeException
+{
+    public NotaInsuficienteException (String message)
+    {
+        super(message);
+    }
+}
