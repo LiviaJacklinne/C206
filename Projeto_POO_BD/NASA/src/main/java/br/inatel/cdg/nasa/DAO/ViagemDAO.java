@@ -1,8 +1,5 @@
 package br.inatel.cdg.nasa.DAO;
 
-import br.inatel.cdg.nasa.MODEL.Mapa;
-import br.inatel.cdg.nasa.MODEL.Nave;
-import br.inatel.cdg.nasa.MODEL.Planeta;
 import br.inatel.cdg.nasa.MODEL.Viagem;
 
 import java.sql.SQLException;
@@ -14,8 +11,6 @@ public class ViagemDAO extends ConnectionDAO
     boolean sucesso = false; //Para saber se funcionou
 
     // INSERIR VIAGEM
-      //public boolean inserirViagem(Viagem viagem, Mapa mapa, Nave nave, Planeta planeta)
-    // public boolean deletarViagem(Viagem viagem, Mapa mapa, Nave nave, Planeta planeta)
     public boolean inserirViagem(Viagem viagem)
     {
         connectToDB();
@@ -54,6 +49,7 @@ public class ViagemDAO extends ConnectionDAO
         return sucesso;
     }
 
+    //  ATUALIZAR VIAGEM
     public boolean atualizarViagem(Viagem viagem)
     {
         connectToDB();
@@ -87,7 +83,7 @@ public class ViagemDAO extends ConnectionDAO
         return sucesso;
     }
 
-   // public boolean deletarViagem(Viagem viagem, Mapa mapa, Nave nave, Planeta planeta)
+    // DELETAR VIAGEM
     public boolean deletarViagem(int id)
     {
         connectToDB();
@@ -123,7 +119,7 @@ public class ViagemDAO extends ConnectionDAO
         return sucesso;
     }
 
-
+    // MOSTRA INFO VIAGEM
     public ArrayList<Viagem> buscarViagemSemFiltro()
     {
         ArrayList<Viagem> listaDeViagem = new ArrayList<>();
@@ -152,7 +148,8 @@ public class ViagemDAO extends ConnectionDAO
                 listaDeViagem.add(viagemAux);
             }
             sucesso = true;
-        } catch(SQLException e)
+        }
+        catch(SQLException e)
         {
             System.out.println("Erro: " + e.getMessage());
             sucesso = false;

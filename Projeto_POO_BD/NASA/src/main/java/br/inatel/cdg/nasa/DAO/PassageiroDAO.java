@@ -1,6 +1,5 @@
 package br.inatel.cdg.nasa.DAO;
 
-import br.inatel.cdg.nasa.MODEL.Nave;
 import br.inatel.cdg.nasa.MODEL.Passageiro;
 import java.sql.SQLException;
 import java.util.ArrayList;
